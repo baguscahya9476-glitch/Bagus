@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login dj bs remix</title>
+  <style>
+    * {
+      margin: 0; 
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000000;
+    }
+
+    .container {
+      width: 400px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      overflow: hidden;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      background: #ffffff;
+      color: #000000;
+      cursor: pointer;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 15px;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      background: #9b9b9b;
+    }
+
+    .form {
+      padding: 20px;
+      display: none;
+      animation: slide 0.5s ease;
+    }
+
+    .form.active {
+      display: block;
+    }
+
+    .form h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #000000;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #000000;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #9b9b9b;
+      border-radius: 10px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .input-group input:focus {
+      border-color: #9b9b9b;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      background: #000000;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #a5a5a5;
+    }
+
+    .msg {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    @keyframes slide {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .hyu{
+      display: block;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 10px;
+      bottom: 15px;
+    }
+
+    .notif {
+      color: #000000;
+      background: rgba(255, 0, 0, 0.2);
+      padding: 8px;
+      border-radius: 6px;
+      margin-top: 5px;
+      display: none;
+      text-align: center;
+    }
+
+    .stars {
+    width: 1px;
+    height: 2px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    animation: moveStars 10s linear infinite;
+  }
+
+  @keyframes moveStars {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(100vh); opacity: 0; }
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="tabs">
+      <div class="tab active" onclick="showForm('login')" style="border: 1px solid black; width: 100px; top: -2px; position: relative;">Login</div>
+      <div class="tab" onclick="showForm('register')" style="border: 1px solid black; width: 100px; top: -2px; position: relative;">Register</div>
+    </div>
+
+    <div class="form active" id="login">
+      <h2>Login</h2>
+      <div style="border: 2px solid black; width: 100px; top: -2px; position: relative;"></div>
+      <div class="hyu"><h1>DJ BS REMIX</h1></div>
+      <div style="border: 2px solid black; width: 100px; right: -260px; position: relative; bottom: 30px;"></div>
+      <form id="formSaya">
+      <div class="input-group"><label>Nama</label>
+      <input type="text" id="username" placeholder="username"></div>
+      <div class="input-group"><label>kelas</label>
+      <input type="number" min="0" id="kelas" max="99" oninput="this.value = this.value.slice(0, 2)" placeholder="kelas"></div>
+      <button class="btn" type="submit">Masuk</button>
+      </form>
+      <div id="notif" class="notif">Anda harus mengisinya terlebih dahulu!</div>
+    </div>
+
+    <div class="form" id="register">
+      <h2>Register</h2>
+      <div style="border: 2px solid black; width: 100px; top: -2px; position: relative;"></div>
+      <div class="hyu"><h1>DJ BS REMIX</h1></div>
+      <div style="border: 2px solid black; width: 100px; right: -260px; position: relative; bottom: 30px;"></div>
+      <form id="formSaya">
+      <div class="input-group"><label>Nama</label>
+      <input type="text" id="username" placeholder="username"></div>
+      <div class="input-group"><label>kelas</label>
+      <input type="number" min="0" id="kelas" max="99" oninput="this.value = this.value.slice(0, 2)" placeholder="kelas"></div>
+      <button class="btn" type="submit">Register</button>
+      </form>
+      <div id="notif" class="notif">Anda harus mengisinya terlebih dahulu!</div>
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById("formSaya").addEventListener("submit", function(e) {
+      e.preventDefault(); // biar nggak reload otomatis
+
+      const username = document.getElementById("username").value.trim();
+      const kelas = document.getElementById("kelas").value.trim();
+      const notif = document.getElementById("notif");
+
+      if (username === "" || kelas === "") {
+        notif.style.display = "block"; // tampilkan pesan error
+      } else {
+        notif.style.display = "none"; // sembunyikan pesan
+        window.location.href = "https://www.tiktok.com/@djbsremix"; // pindah ke halaman lain
+      }
+    });
+
+    function showForm(formId) {
+      document.querySelectorAll('.form').forEach(f => f.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(formId).classList.add('active');
+      document.querySelector(`.tab[onclick="showForm('${formId}')"]`).classList.add('active');
+    }
+
+    const count = 100;
+    for (let i = 0; i < count; i++) {
+    const star = document.createElement('div');
+    star.classList.add('stars');
+    star.style.left = Math.random() * 100 + 'vw';
+    star.style.top = Math.random() * 100 + 'vh';
+    star.style.animationDuration = (Math.random() * 5 + 5) + 's';
+    star.style.opacity = Math.random();
+    document.body.appendChild(star);
+  }
+  </script>
+</body>
+</html>
