@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/d1933f0684fa842ff659af0055bfdfda~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=5702970e&x-expires=1760857200&x-signature=Tmbw7XV53r80aswc5Q6ey6hXU4k%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my">
   <title>Login dj bs remix</title>
   <style>
     * {
@@ -167,11 +168,11 @@
       <div style="border: 2px solid black; width: 100px; top: -2px; position: relative;"></div>
       <div class="hyu"><h1>DJ BS REMIX</h1></div>
       <div style="border: 2px solid black; width: 100px; right: -260px; position: relative; bottom: 30px;"></div>
-      <form id="formSaya">
+      <form action="index.php" method="POST" onsubmit="return validasiForm()">
       <div class="input-group"><label>Nama</label>
-      <input type="text" id="username" placeholder="username"></div>
+      <input type="text" id="nama" name="nama" placeholder="Username"></div>
       <div class="input-group"><label>kelas</label>
-      <input type="number" min="0" id="kelas" max="99" oninput="this.value = this.value.slice(0, 2)" placeholder="kelas"></div>
+      <input type="number" min="0" id="kelas" max="99" name="kelas" oninput="this.value = this.value.slice(0, 2)" placeholder="Kelas"></div>
       <button class="btn" type="submit">Masuk</button>
       </form>
       <div id="notif" class="notif">Anda harus mengisinya terlebih dahulu!</div>
@@ -182,33 +183,27 @@
       <div style="border: 2px solid black; width: 100px; top: -2px; position: relative;"></div>
       <div class="hyu"><h1>DJ BS REMIX</h1></div>
       <div style="border: 2px solid black; width: 100px; right: -260px; position: relative; bottom: 30px;"></div>
-      <form id="formSaya">
+      <form id="myForm">
       <div class="input-group"><label>Nama</label>
       <input type="text" id="username" placeholder="username"></div>
       <div class="input-group"><label>kelas</label>
       <input type="number" min="0" id="kelas" max="99" oninput="this.value = this.value.slice(0, 2)" placeholder="kelas"></div>
       <button class="btn" type="submit">Register</button>
       </form>
-      <div id="notif" class="notif">Anda harus mengisinya terlebih dahulu!</div>
-    </div>
-
+      </div>
   </div>
 
   <script>
-    document.getElementById("formSaya").addEventListener("submit", function(e) {
-      e.preventDefault(); // biar nggak reload otomatis
+    function validasiForm() {
+      let nama = document.getElementById("nama").value.trim();
+      let kelas = document.getElementById("kelas").value.trim();
 
-      const username = document.getElementById("username").value.trim();
-      const kelas = document.getElementById("kelas").value.trim();
-      const notif = document.getElementById("notif");
-
-      if (username === "" || kelas === "") {
-        notif.style.display = "block"; // tampilkan pesan error
-      } else {
-        notif.style.display = "none"; // sembunyikan pesan
-        window.location.href = "https://www.tiktok.com/@djbsremix"; // pindah ke halaman lain
+      if (nama === "" || kelas === "") {
+        alert("Anda harus mengisi Nama dan Kelas terlebih dahulu!");
+        return false; // hentikan pengiriman form
       }
-    });
+      return true; // lanjut kirim ke PHP
+    }
 
     function showForm(formId) {
       document.querySelectorAll('.form').forEach(f => f.classList.remove('active'));
@@ -216,17 +211,6 @@
       document.getElementById(formId).classList.add('active');
       document.querySelector(`.tab[onclick="showForm('${formId}')"]`).classList.add('active');
     }
-
-    const count = 100;
-    for (let i = 0; i < count; i++) {
-    const star = document.createElement('div');
-    star.classList.add('stars');
-    star.style.left = Math.random() * 100 + 'vw';
-    star.style.top = Math.random() * 100 + 'vh';
-    star.style.animationDuration = (Math.random() * 5 + 5) + 's';
-    star.style.opacity = Math.random();
-    document.body.appendChild(star);
-  }
   </script>
 </body>
 </html>
