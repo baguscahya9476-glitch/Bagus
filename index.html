@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/d1933f0684fa842ff659af0055bfdfda~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=5702970e&x-expires=1760857200&x-signature=Tmbw7XV53r80aswc5Q6ey6hXU4k%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my">
   <title>Login dj bs remix</title>
+  <meta name="google-site-verification" content="vMALG3vIFpAJgAXKbqsUYujquKAuiaBX225rwQ1UaXo" />
   <style>
     * {
       margin: 0; 
@@ -121,7 +122,7 @@
       to {opacity: 1; transform: translateY(0);}
     }
 
-    .hyu{
+    .hyu {
       display: block;
       position: relative;
       justify-content: center;
@@ -129,16 +130,6 @@
       text-align: center;
       font-size: 10px;
       bottom: 15px;
-    }
-
-    .notif {
-      color: #000000;
-      background: rgba(255, 0, 0, 0.2);
-      padding: 8px;
-      border-radius: 6px;
-      margin-top: 5px;
-      display: none;
-      text-align: center;
     }
 
     .stars {
@@ -153,6 +144,24 @@
     from { transform: translateY(0); opacity: 1; }
     to { transform: translateY(100vh); opacity: 0; }
   }
+
+  .notif {
+      color: #000000;
+      background: rgba(255, 0, 0, 0.2);
+      padding: 8px;
+      border-radius: 6px;
+      display: none;
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    .img{
+      display: grid;
+      width: 10px;
+      height: 10px;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 </head>
 <body>
@@ -168,7 +177,7 @@
       <div style="border: 2px solid black; width: 100px; top: -2px; position: relative;"></div>
       <div class="hyu"><h1>DJ BS REMIX</h1></div>
       <div style="border: 2px solid black; width: 100px; right: -260px; position: relative; bottom: 30px;"></div>
-      <form action="index.php" method="POST" onsubmit="return validasiForm()">
+      <form id="myForm">
       <div class="input-group"><label>Nama</label>
       <input type="text" id="nama" name="nama" placeholder="Username"></div>
       <div class="input-group"><label>kelas</label>
@@ -190,20 +199,26 @@
       <input type="number" min="0" id="kelas" max="99" oninput="this.value = this.value.slice(0, 2)" placeholder="kelas"></div>
       <button class="btn" type="submit">Register</button>
       </form>
+      <div id="notif" class="notif">Anda harus mengisinya terlebih dahulu!</div>
       </div>
   </div>
 
   <script>
-    function validasiForm() {
-      let nama = document.getElementById("nama").value.trim();
-      let kelas = document.getElementById("kelas").value.trim();
+    document.getElementById('myForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nama = document.getElementById('nama').value.trim();
+      const kelas = document.getElementById('kelas').value.trim();
+      const notif = document.getElementById('notif');
 
       if (nama === "" || kelas === "") {
-        alert("Anda harus mengisi Nama dan Kelas terlebih dahulu!");
-        return false; // hentikan pengiriman form
+        notif.style.display = "block";
+      } else {
+        notif.style.display = "none";
+       
+        window.location.href = "https://www.tiktok.com/@djbsremix";
       }
-      return true; // lanjut kirim ke PHP
-    }
+    });
 
     function showForm(formId) {
       document.querySelectorAll('.form').forEach(f => f.classList.remove('active'));
