@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DJ BS Remix</title>
+  <meta name="description" content="DJ BS Remix — club-ready edits, bass-heavy blends, and exclusive drops. Stream, preview, and buy the latest remixes." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/d1933f0684fa842ff659af0055bfdfda~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=5702970e&x-expires=1760857200&x-signature=Tmbw7XV53r80aswc5Q6ey6hXU4k%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my">
+  <meta name="google-site-verification" content="IUZDFkekCpoz_ukbQKq-G59HDK4JMTpS7DvoBu_rFkU" />
+  <style>
+    :root{
+      --accent:#ff3d81;
+      --dark:#0e0f12;
+      --muted:#9aa0a6;
+      --card:#111216;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+      background:linear-gradient(180deg,#060607 0%, #0f0f12 60%);
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+    }
+    header{
+      padding:28px 24px;
+      display:flex;
+      gap:20px;
+      align-items:center;
+      justify-content:space-between;
+      border-bottom:1px solid rgba(255,255,255,0.03);
+      position:sticky;
+      top:0;
+      backdrop-filter:blur(6px);
+      z-index:10;
+    }
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      box-shadow: white;
+    }
+    .logo{
+     display:flex;
+     position: relative;
+      width:30px;
+      height:30px;
+      right: 10px;
+    }
+    nav a{
+      text-decoration:none; 
+      margin-left:14px; 
+      font-weight:600; 
+      font-size:14px;
+    }
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      padding:48px 24px;
+      align-items:center;
+    }
+    .hero-left h1{
+      margin:0 0 12px 0;
+      font-size:42px;
+      letter-spacing:-1px;
+    }
+    .tag{
+      display:inline-block;
+      background:rgba(255,255,255,0.04);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:700;
+      margin-bottom:18px;
+      color: rgb(185, 185, 185);
+    }
+    .lead{
+      color: white;
+      margin-bottom:18px;
+      max-width:66ch;
+    }
+    .cta-row{
+      display:flex; 
+      gap:12px; 
+      margin-bottom:18px;
+    }
+    .btn{
+      background:linear-gradient(90deg,black,#ffffff,black);
+      color:#000000;
+      padding:12px 16px;
+      border-radius:12px;
+      text-decoration: none;
+      font-weight:800;
+      box-shadow:0 8px 20px rgb(32, 32, 32);
+    } 
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 8px 30px rgba(2,2,3,0.6); 
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .cover{
+      height:320px;
+      border-radius:12px;
+      background-size:cover; 
+      background-position:center; 
+      position:relative; 
+      overflow:hidden;
+      display:flex;
+      align-items:flex-end;
+      padding:20px;
+      color:#fff;
+    }
+    .cover h3{
+      margin:0 0 6px 0;
+    }
+    .meta{
+      font-size:13px;
+      color:rgba(255,255,255,0.85); 
+      opacity:0.95;
+    }
+    main{
+      padding:24px; 
+      display:grid; 
+      gap:22px; 
+      max-width:1200px; 
+      margin:0 auto;
+    }
+    .tracks{
+      display:grid; 
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); 
+      gap:16px;
+    }
+    .track{
+      padding:14px; 
+      border-radius:12px;
+      display:flex; 
+      gap:12px; 
+      align-items:center;
+    }
+    .thumb{
+      display: flex; 
+      position: relative;
+      width:30px; 
+      height:30px;
+      top: 20px;
+      right: 10px;
+    }
+    .track-info h4{
+      margin:0 0 6px 0;
+    }
+    .track-info p{
+      margin:0;
+      font-size:13px;
+    }
+    .actions{
+      margin-top:10px; 
+      display:flex; 
+      gap:8px;
+    }
+    .buy{
+      padding:8px 12px; 
+      border-radius:10px; 
+      background:rgba(255,255,255,0.04);  
+      text-decoration:none; 
+      font-weight:700;
+    }
+    footer{
+      padding:28px 24px;  
+      border-top:1px solid rgba(255,255,255,0.02); 
+      text-align:center;
+    }
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr; padding-bottom:8px}
+      .cover{height:220px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+        <div class="logo">
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhbLb4bc4GZf0Tokfw3dlpgvRIDtdywLdHhZPhD8Y5cpVKRFI6dn7B73UZ8uXZU7FFIunzkQippn8GbTAZ4lCgiifLyHinOe9HolkaU2PpEkAxlDh77L1rgblnlYSaH_FiCqzDtkGPV6InDr0pBrw3Zgn7EuWhax1DAq31ibB7qTSlkRhFGSY0oQqiaQMU=w945-h600-p-k-no-nu" alt="">
+        </div>
+      <div>
+        <div style="font-weight:800; font-size:16px">DJ BS Remix</div>
+        <div style="font-size:13px;">Edits · Drops · Exclusive Remix</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <span class="tag">NEW DROP • 2025</span>
+      <h1>DJ BS REMIX</h1>
+      <h4 class="lead">
+        DJ BS REMIX, BS Berawal Dari Nama Saya Yaitu Bagus, DJ BAGUS REMIX Akan Kepanjangan Dan Tidak Enak Untuk Di Dengar, Jadi Saya Singkat Aja Menjadi DJ BS REMIX,
+        Saya Membuat Lagu DJ Karena Saya Suka Dengan Music DJ Dan Saya Juga Terinspirasi Dari Maman Fvndy Rmx, Somoga Kalian Suka Dengan DJ Buatan Saya Dan Terimakasih Sudah Mengunjungin
+        Website Saya Ini, Jika Kalian Penasaran Dengan DJ Buatan Saya Silakan Kalian Tunjungin Tiktok Dan Youtube Saya Di Bawah Ini.
+      </h4>
+
+      <div class="cta-row">
+        <a class="btn" href="https://djbsremixxxx.netlify.app/">Kunjungin Tiktok</a>
+        <a class="btn" href="http://www.youtube.com/@DJBS_REMIX">Kunjungin YouTube</a>
+      </div>
+
+      <h4 style="color: white; max-width:60ch;">
+        TERIMA KASIH YANG SUDAH SUPPORT KAMI.
+      </h4>
+    </div>
+
+    <aside class="card">
+      <div class="cover" style="background-image: url('https://blogger.googleusercontent.com/img/a/AVvXsEhbLb4bc4GZf0Tokfw3dlpgvRIDtdywLdHhZPhD8Y5cpVKRFI6dn7B73UZ8uXZU7FFIunzkQippn8GbTAZ4lCgiifLyHinOe9HolkaU2PpEkAxlDh77L1rgblnlYSaH_FiCqzDtkGPV6InDr0pBrw3Zgn7EuWhax1DAq31ibB7qTSlkRhFGSY0oQqiaQMU=w945-h600-p-k-no-nu')">
+      </div>
+
+      <div style="display:flex; gap:10px; margin-top:14px; align-items:center; justify-content:space-between;">
+        <div>
+          <div style="font-weight:700">TERIMA KASIH SUDAH SUPPORT KAMI</div>
+          <div style="font-size:13px;">Dukung karya DJ BS REMIX.</div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <main>
+    <section id="tracks">
+      <h2 style="margin:0 0 8px 0;">Dengarkan Lagu.</h2>
+      <br>
+
+      <div class="tracks">
+       
+        <article class="track card">
+          <div class="thumb">
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhbLb4bc4GZf0Tokfw3dlpgvRIDtdywLdHhZPhD8Y5cpVKRFI6dn7B73UZ8uXZU7FFIunzkQippn8GbTAZ4lCgiifLyHinOe9HolkaU2PpEkAxlDh77L1rgblnlYSaH_FiCqzDtkGPV6InDr0pBrw3Zgn7EuWhax1DAq31ibB7qTSlkRhFGSY0oQqiaQMU=w945-h600-p-k-no-nu" alt="">
+          </div>
+          <div style="flex:1;">
+            <div class="track-info">
+              <h4>RINDU AKU RINDU KAMU JADI SATU (DJ BS Remix)</h4>
+            </div>
+
+            <div class="actions">
+              <audio controls preload="flex" style="width:100%">
+                <source src="Download.mp3" type="audio/mpeg">
+                Browser Anda tidak mendukung audio preview.
+              </audio>
+            </div>
+          </div>
+        </article>
+
+        <article class="track card">
+          <div class="thumb">
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhbLb4bc4GZf0Tokfw3dlpgvRIDtdywLdHhZPhD8Y5cpVKRFI6dn7B73UZ8uXZU7FFIunzkQippn8GbTAZ4lCgiifLyHinOe9HolkaU2PpEkAxlDh77L1rgblnlYSaH_FiCqzDtkGPV6InDr0pBrw3Zgn7EuWhax1DAq31ibB7qTSlkRhFGSY0oQqiaQMU=w945-h600-p-k-no-nu" alt="">
+          </div>
+          <div style="flex:1;">
+            <div class="track-info">
+              <h4>SABAR SADEWOK (DJ BS Remix)</h4>
+            </div>
+
+            <div class="actions">
+              <audio controls preload="flex" style="width:100%">
+                <source src="Download (1).mp3" type="audio/mpeg">
+                Browser Anda tidak mendukung audio preview.
+              </audio>
+            </div>
+          </div>
+        </article>
+
+        <article class="track card">
+          <div class="thumb">
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhbLb4bc4GZf0Tokfw3dlpgvRIDtdywLdHhZPhD8Y5cpVKRFI6dn7B73UZ8uXZU7FFIunzkQippn8GbTAZ4lCgiifLyHinOe9HolkaU2PpEkAxlDh77L1rgblnlYSaH_FiCqzDtkGPV6InDr0pBrw3Zgn7EuWhax1DAq31ibB7qTSlkRhFGSY0oQqiaQMU=w945-h600-p-k-no-nu" alt="">
+          </div>
+          <div style="flex:1;">
+            <div class="track-info">
+              <h4>NGAPAIN REPOT (DJ BS Remix)</h4>
+            </div>
+
+            <div class="actions">
+              <audio controls preload="flex" style="width:100%">
+                <source src="Download (2).mp3" type="audio/mpeg">
+                Browser Anda tidak mendukung audio preview.
+              </audio>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="bio" class="card" style="padding:18px;">
+      <h3>About DJ BS REMIX</h3>
+      <p style="color: white">
+        DJ BS REMIX dikenal dengan signature sound: <strong>punchy low-end</strong>, <strong>sweeping FX</strong>, dan <strong>dramatic build-ups</strong> yang dirancang
+        untuk menghentak dancefloor. Baik untuk club, festival, maupun streaming set—remix dan edit ini dibuat agar mudah disinkronkan
+        ke set Anda tanpa kehilangan energi asli lagu.
+      </p>
+
+      <ul style="color: white; margin-top:8px">
+        <li>Format pembelian: Digital (MP3 / WAV), Lisensi DJ, Stems (permintaan khusus).</li>
+        <li>Kontak booking & lisensi: <a href="DJ BS REMIX@GMAIL.COM."></a>DJ BS REMIX.</li>
+        <li>Follow & stream: Spotify / SoundCloud / YouTube (link tersedia di tombol tiap track).</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> DJ BS Remix — All rights reserved. • Built with ❤ for the dance  floor.
+  </footer>
+
+  <script>
+    const audios = Array.from(document.querySelectorAll('audio'));
+
+    audios.forEach(audio => {
+      audio.addEventListener('play', () => {
+        audios.forEach(other => {
+          if (other !== audio && !other.paused) {
+            other.pause();
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
