@@ -1,231 +1,326 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DJ BS Remix</title>
+  <meta name="description" content="DJ BS Remix — club-ready edits, bass-heavy blends, and exclusive drops. Stream, preview, and buy the latest remixes." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/d1933f0684fa842ff659af0055bfdfda~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=5702970e&x-expires=1760857200&x-signature=Tmbw7XV53r80aswc5Q6ey6hXU4k%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my">
-  <title>Login dj bs remix</title>
-  <meta name="google-site-verification" content="vMALG3vIFpAJgAXKbqsUYujquKAuiaBX225rwQ1UaXo" />
   <style>
-    * {
-      margin: 0; 
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
+    :root{
+      --accent:#ff3d81;
+      --dark:#0e0f12;
+      --muted:#9aa0a6;
+      --card:#111216;
     }
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #000000;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+      background:linear-gradient(180deg,#060607 0%, #0f0f12 60%);
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
     }
-
-    .container {
-      width: 400px;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      overflow: hidden;
-      animation: fadeIn 1s ease-in-out;
+    header{
+      padding:28px 24px;
+      display:flex;
+      gap:20px;
+      align-items:center;
+      justify-content:space-between;
+      border-bottom:1px solid rgba(255,255,255,0.03);
+      position:sticky;
+      top:0;
+      backdrop-filter:blur(6px);
+      z-index:10;
     }
-
-    .tabs {
-      display: flex;
-      justify-content: space-around;
-      background: #ffffff;
-      color: #000000;
-      cursor: pointer;
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      box-shadow: white;
     }
-
-    .tab {
-      flex: 1;
-      text-align: center;
-      padding: 15px;
-      transition: 0.3s;
+    .logo{
+     display:flex;
+     position: relative;
+      width:30px;
+      height:30px;
+      right: 10px;
     }
-
-    .tab.active {
-      background: #9b9b9b;
+    nav a{
+      text-decoration:none; 
+      margin-left:14px; 
+      font-weight:600; 
+      font-size:14px;
     }
-
-    .form {
-      padding: 20px;
-      display: none;
-      animation: slide 0.5s ease;
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      padding:48px 24px;
+      align-items:center;
     }
-
-    .form.active {
-      display: block;
+    .hero-left h1{
+      margin:0 0 12px 0;
+      font-size:42px;
+      letter-spacing:-1px;
     }
-
-    .form h2 {
-      margin-bottom: 20px;
-      text-align: center;
-      color: #000000;
+    .tag{
+      display:inline-block;
+      background:rgba(255,255,255,0.04);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:700;
+      margin-bottom:18px;
+      color: rgb(185, 185, 185);
     }
-
-    .input-group {
-      margin-bottom: 15px;
+    .lead{
+      color: white;
+      margin-bottom:18px;
+      max-width:66ch;
     }
-
-    .input-group label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: 600;
-      color: #000000;
+    .cta-row{
+      display:flex; 
+      gap:12px; 
+      margin-bottom:18px;
     }
-
-    .input-group input {
-      width: 100%;
-      padding: 10px;
-      border: 2px solid #9b9b9b;
-      border-radius: 10px;
-      outline: none;
-      transition: 0.3s;
+    .btn{
+      background:linear-gradient(90deg,black,#ffffff,black);
+      color:#000000;
+      padding:12px 16px;
+      border-radius:12px;
+      text-decoration: none;
+      font-weight:800;
+      box-shadow:0 8px 20px rgb(32, 32, 32);
+    } 
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 8px 30px rgba(2,2,3,0.6); 
+      border:1px solid rgba(255,255,255,0.03);
     }
-
-    .input-group input:focus {
-      border-color: #9b9b9b;
+    .cover{
+      height:320px;
+      border-radius:12px;
+      background-size:cover; 
+      background-position:center; 
+      position:relative; 
+      overflow:hidden;
+      display:flex;
+      align-items:flex-end;
+      padding:20px;
+      color:#fff;
     }
-
-    .btn {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 12px;
-      background: #000000;
-      color: #fff;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
+    .cover h3{
+      margin:0 0 6px 0;
     }
-
-    .btn:hover {
-      background: #a5a5a5;
+    .meta{
+      font-size:13px;
+      color:rgba(255,255,255,0.85); 
+      opacity:0.95;
     }
-
-    .msg {
-      margin-top: 10px;
-      text-align: center;
-      font-size: 14px;
+    main{
+      padding:24px; 
+      display:grid; 
+      gap:22px; 
+      max-width:1200px; 
+      margin:0 auto;
     }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: scale(0.9);}
-      to {opacity: 1; transform: scale(1);}
+    .tracks{
+      display:grid; 
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); 
+      gap:16px;
     }
-
-    @keyframes slide {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+    .track{
+      padding:14px; 
+      border-radius:12px;
+      display:flex; 
+      gap:12px; 
+      align-items:center;
     }
-
-    .hyu {
-      display: block;
+    .thumb{
+      display: flex; 
       position: relative;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      font-size: 10px;
-      bottom: 15px;
+      width:30px; 
+      height:30px;
+      top: 20px;
+      right: 10px;
     }
-
-    .stars {
-    width: 1px;
-    height: 2px;
-    background: rgb(255, 255, 255);
-    position: absolute;
-    animation: moveStars 10s linear infinite;
-  }
-
-  @keyframes moveStars {
-    from { transform: translateY(0); opacity: 1; }
-    to { transform: translateY(100vh); opacity: 0; }
-  }
-
-  .notif {
-      color: #000000;
-      background: rgba(255, 0, 0, 0.2);
-      padding: 8px;
-      border-radius: 6px;
-      display: none;
-      margin-top: 5px;
-      text-align: center;
+    .track-info h4{
+      margin:0 0 6px 0;
     }
-
-    .img{
-      display: grid;
-      width: 10px;
-      height: 10px;
-      justify-content: center;
-      align-items: center;
+    .track-info p{
+      margin:0;
+      font-size:13px;
+    }
+    .actions{
+      margin-top:10px; 
+      display:flex; 
+      gap:8px;
+    }
+    .buy{
+      padding:8px 12px; 
+      border-radius:10px; 
+      background:rgba(255,255,255,0.04);  
+      text-decoration:none; 
+      font-weight:700;
+    }
+    footer{
+      padding:28px 24px;  
+      border-top:1px solid rgba(255,255,255,0.02); 
+      text-align:center;
+    }
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr; padding-bottom:8px}
+      .cover{height:220px}
     }
   </style>
 </head>
 <body>
-  <div class="container">
-
-    <div class="tabs">
-      <div class="tab active" onclick="showForm('login')" style="border: 1px solid black; width: 100px; top: -2px; position: relative;">Login</div>
-      <div class="tab" onclick="showForm('register')" style="border: 1px solid black; width: 100px; top: -2px; position: relative;">Register</div>
-    </div>
-
-    <div class="form active" id="login">
-      <h2>Login</h2>
-      <div style="border: 2px solid black; width: 100px; top: -2px; position: relative;"></div>
-      <div class="hyu"><h1>DJ BS REMIX</h1></div>
-      <div style="border: 2px solid black; width: 100px; right: -260px; position: relative; bottom: 30px;"></div>
-      <form id="myForm">
-      <div class="input-group"><label>Nama</label>
-      <input type="text" id="nama" name="nama" placeholder="Username"></div>
-      <div class="input-group"><label>kelas</label>
-      <input type="number" min="0" id="kelas" max="99" name="kelas" oninput="this.value = this.value.slice(0, 2)" placeholder="Kelas"></div>
-      <button class="btn" type="submit">Masuk</button>
-      </form>
-      <div id="notif" class="notif">Anda harus mengisinya terlebih dahulu!</div>
-    </div>
-
-    <div class="form" id="register">
-      <h2>Register</h2>
-      <div style="border: 2px solid black; width: 100px; top: -2px; position: relative;"></div>
-      <div class="hyu"><h1>DJ BS REMIX</h1></div>
-      <div style="border: 2px solid black; width: 100px; right: -260px; position: relative; bottom: 30px;"></div>
-      <form id="myForm">
-      <div class="input-group"><label>Nama</label>
-      <input type="text" id="username" placeholder="username"></div>
-      <div class="input-group"><label>kelas</label>
-      <input type="number" min="0" id="kelas" max="99" oninput="this.value = this.value.slice(0, 2)" placeholder="kelas"></div>
-      <button class="btn" type="submit">Register</button>
-      </form>
-      <div id="notif" class="notif">Anda harus mengisinya terlebih dahulu!</div>
+  <header>
+    <div class="brand">
+        <div class="logo">
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhbLb4bc4GZf0Tokfw3dlpgvRIDtdywLdHhZPhD8Y5cpVKRFI6dn7B73UZ8uXZU7FFIunzkQippn8GbTAZ4lCgiifLyHinOe9HolkaU2PpEkAxlDh77L1rgblnlYSaH_FiCqzDtkGPV6InDr0pBrw3Zgn7EuWhax1DAq31ibB7qTSlkRhFGSY0oQqiaQMU=w945-h600-p-k-no-nu" alt="">
+        </div>
+      <div>
+        <div style="font-weight:800; font-size:16px">DJ BS Remix</div>
+        <div style="font-size:13px;">Edits · Drops · Exclusive Remix</div>
       </div>
-  </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <span class="tag">NEW DROP • 2025</span>
+      <h1>DJ BS REMIX</h1>
+      <h4 class="lead">
+        DJ BS REMIX, BS Berawal Dari Nama Saya Yaitu Bagus, DJ BAGUS REMIX Akan Kepanjangan Dan Tidak Enak Untuk Di Dengar, Jadi Saya Singkat Aja Menjadi DJ BS REMIX,
+        Saya Membuat Lagu DJ Karena Saya Suka Dengan Music DJ Dan Saya Juga Terinspirasi Dari Maman Fvndy Rmx, Somoga Kalian Suka Dengan DJ Buatan Saya Dan Terimakasih Sudah Mengunjungin
+        Website Saya Ini, Jika Kalian Penasaran Dengan DJ Buatan Saya Silakan Kalian Tunjungin Tiktok Dan Youtube Saya Di Bawah Ini.
+      </h4>
+
+      <div class="cta-row">
+        <a class="btn" href="https://djbsremixxxx.netlify.app/">Kunjungin Tiktok</a>
+        <a class="btn" href="http://www.youtube.com/@DJBS_REMIX">Kunjungin YouTube</a>
+      </div>
+
+      <h4 style="color: white; max-width:60ch;">
+        TERIMA KASIH YANG SUDAH SUPPORT KAMI.
+      </h4>
+    </div>
+
+    <aside class="card">
+      <div class="cover" style="background-image: url('https://blogger.googleusercontent.com/img/a/AVvXsEhbLb4bc4GZf0Tokfw3dlpgvRIDtdywLdHhZPhD8Y5cpVKRFI6dn7B73UZ8uXZU7FFIunzkQippn8GbTAZ4lCgiifLyHinOe9HolkaU2PpEkAxlDh77L1rgblnlYSaH_FiCqzDtkGPV6InDr0pBrw3Zgn7EuWhax1DAq31ibB7qTSlkRhFGSY0oQqiaQMU=w945-h600-p-k-no-nu')">
+      </div>
+
+      <div style="display:flex; gap:10px; margin-top:14px; align-items:center; justify-content:space-between;">
+        <div>
+          <div style="font-weight:700">TERIMA KASIH SUDAH SUPPORT KAMI</div>
+          <div style="font-size:13px;">Dukung karya DJ BS REMIX.</div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <main>
+    <section id="tracks">
+      <h2 style="margin:0 0 8px 0;">Dengarkan Lagu.</h2>
+      <br>
+
+      <div class="tracks">
+       
+        <article class="track card">
+          <div class="thumb">
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhbLb4bc4GZf0Tokfw3dlpgvRIDtdywLdHhZPhD8Y5cpVKRFI6dn7B73UZ8uXZU7FFIunzkQippn8GbTAZ4lCgiifLyHinOe9HolkaU2PpEkAxlDh77L1rgblnlYSaH_FiCqzDtkGPV6InDr0pBrw3Zgn7EuWhax1DAq31ibB7qTSlkRhFGSY0oQqiaQMU=w945-h600-p-k-no-nu" alt="">
+          </div>
+          <div style="flex:1;">
+            <div class="track-info">
+              <h4>RINDU AKU RINDU KAMU JADI SATU (DJ BS Remix)</h4>
+            </div>
+
+            <div class="actions">
+              <audio controls preload="flex" style="width:100%">
+                <source src="Download.mp3" type="audio/mpeg">
+                Browser Anda tidak mendukung audio preview.
+              </audio>
+            </div>
+          </div>
+        </article>
+
+        <article class="track card">
+          <div class="thumb">
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhbLb4bc4GZf0Tokfw3dlpgvRIDtdywLdHhZPhD8Y5cpVKRFI6dn7B73UZ8uXZU7FFIunzkQippn8GbTAZ4lCgiifLyHinOe9HolkaU2PpEkAxlDh77L1rgblnlYSaH_FiCqzDtkGPV6InDr0pBrw3Zgn7EuWhax1DAq31ibB7qTSlkRhFGSY0oQqiaQMU=w945-h600-p-k-no-nu" alt="">
+          </div>
+          <div style="flex:1;">
+            <div class="track-info">
+              <h4>SABAR SADEWOK (DJ BS Remix)</h4>
+            </div>
+
+            <div class="actions">
+              <audio controls preload="flex" style="width:100%">
+                <source src="Download (1).mp3" type="audio/mpeg">
+                Browser Anda tidak mendukung audio preview.
+              </audio>
+            </div>
+          </div>
+        </article>
+
+        <article class="track card">
+          <div class="thumb">
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhbLb4bc4GZf0Tokfw3dlpgvRIDtdywLdHhZPhD8Y5cpVKRFI6dn7B73UZ8uXZU7FFIunzkQippn8GbTAZ4lCgiifLyHinOe9HolkaU2PpEkAxlDh77L1rgblnlYSaH_FiCqzDtkGPV6InDr0pBrw3Zgn7EuWhax1DAq31ibB7qTSlkRhFGSY0oQqiaQMU=w945-h600-p-k-no-nu" alt="">
+          </div>
+          <div style="flex:1;">
+            <div class="track-info">
+              <h4>NGAPAIN REPOT (DJ BS Remix)</h4>
+            </div>
+
+            <div class="actions">
+              <audio controls preload="flex" style="width:100%">
+                <source src="Download (2).mp3" type="audio/mpeg">
+                Browser Anda tidak mendukung audio preview.
+              </audio>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="bio" class="card" style="padding:18px;">
+      <h3>About DJ BS REMIX</h3>
+      <p style="color: white">
+        DJ BS REMIX dikenal dengan signature sound: <strong>punchy low-end</strong>, <strong>sweeping FX</strong>, dan <strong>dramatic build-ups</strong> yang dirancang
+        untuk menghentak dancefloor. Baik untuk club, festival, maupun streaming set—remix dan edit ini dibuat agar mudah disinkronkan
+        ke set Anda tanpa kehilangan energi asli lagu.
+      </p>
+
+      <ul style="color: white; margin-top:8px">
+        <li>Format pembelian: Digital (MP3 / WAV), Lisensi DJ, Stems (permintaan khusus).</li>
+        <li>Kontak booking & lisensi: <a href="DJ BS REMIX@GMAIL.COM."></a>DJ BS REMIX.</li>
+        <li>Follow & stream: Spotify / SoundCloud / YouTube (link tersedia di tombol tiap track).</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> DJ BS Remix — All rights reserved. • Built with ❤ for the dance  floor.
+  </footer>
 
   <script>
-    document.getElementById('myForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+    const audios = Array.from(document.querySelectorAll('audio'));
 
-      const nama = document.getElementById('nama').value.trim();
-      const kelas = document.getElementById('kelas').value.trim();
-      const notif = document.getElementById('notif');
-
-      if (nama === "" || kelas === "") {
-        notif.style.display = "block";
-      } else {
-        notif.style.display = "none";
-       
-        window.location.href = "https://www.tiktok.com/@djbsremix";
-      }
+    audios.forEach(audio => {
+      audio.addEventListener('play', () => {
+        audios.forEach(other => {
+          if (other !== audio && !other.paused) {
+            other.pause();
+          }
+        });
+      });
     });
-
-    function showForm(formId) {
-      document.querySelectorAll('.form').forEach(f => f.classList.remove('active'));
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      document.getElementById(formId).classList.add('active');
-      document.querySelector(`.tab[onclick="showForm('${formId}')"]`).classList.add('active');
-    }
   </script>
 </body>
 </html>
